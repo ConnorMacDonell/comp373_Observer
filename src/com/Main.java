@@ -16,5 +16,14 @@ public class Main {
         devonOffice.removeObserver(mailBox1);
         devonOffice.NewMail();
 
+
+        MailBox mailbox2 = new MailBox();
+        PostOffice loyolaOffice = new PostOffice("6317 N. Broadway");
+
+        loyolaOffice.addObserver(mailBox1);
+        loyolaOffice.addObserver(mailbox2);
+        loyolaOffice.NewMail();
+        loyolaOffice.removeObserver(mailBox1);
+        loyolaOffice.NewMail();
     }
 }
