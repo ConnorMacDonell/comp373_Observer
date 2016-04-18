@@ -1,4 +1,4 @@
-/**
+package com; /**
  * Created by Connor on 4/17/16.
  */
 
@@ -16,13 +16,13 @@ public class PostOffice implements Subject {
 
     private ArrayList<Observer> observers;
 
-    public PostOffice(String address){
+    public PostOffice(String address) {
         super();
         this.Address = address;
         observers = new ArrayList<Observer>();
     }
 
-    public void NewMail(){
+    public void NewMail() {
         notifyObservers();
     }
 
@@ -32,15 +32,20 @@ public class PostOffice implements Subject {
     }
 
     @Override
-    public void removeObserver(Observer o){
+    public void removeObserver(Observer o) {
         observers.remove(o);
     }
 
     @Override
-    public void notifyObservers(){
-        for (int i = 0;i<observers.size();i++){
-            observers.get(i).update();
-        }
+    public void notifyObservers() {
+        if (observers.size() > 0) {
+            for (int i = 0; i < observers.size(); i++) {
+                observers.get(i).update();
+            }
 
+        }
+        else{
+            System.out.println("No one is watching.");
+        }
     }
 }

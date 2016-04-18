@@ -1,2 +1,2 @@
 # comp373_Observer
-Observer Design Pattern Implementation
+com.Observer Design Pattern Implementation
